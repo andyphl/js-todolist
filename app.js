@@ -126,7 +126,10 @@ function handleTodoSearch(e) {
 function findMatches(input) {
   return todoListData.filter((todoData) => {
     const regex = new RegExp(input, "gi");
-    return regex.test(todoData.todo);
+    return (
+      regex.test(todoData.todo) ||
+      regex.test(todoData.year + todoData.month + todoData.day)
+    );
   });
 }
 
