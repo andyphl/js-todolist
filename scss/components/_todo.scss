@@ -1,0 +1,76 @@
+@import "../utils/mixin";
+@import "../base/color";
+
+.todo {
+  width: 90vw;
+  margin: 0 auto 1rem;
+  border-radius: 0.5rem;
+  border: 2px $primary-darken solid;
+  @include flex(center, space-between);
+  background: $primary-lighten;
+  padding: 1rem 2rem;
+  animation: todoDebut 0.5s ease-in-out;
+
+  &--complete {
+    opacity: 0.5;
+  }
+
+  &--complete &__title {
+    text-decoration: line-through;
+  }
+
+  &--delete {
+    animation: todoDelete 0.3s ease-in-out;
+  }
+
+  &__title {
+    font-weight: normal;
+    font-size: 1.25rem;
+    line-height: 2;
+  }
+
+  &__time {
+    font-weight: 200;
+    font-size: 0.75rem;
+  }
+
+  &__button {
+    &--complete {
+      background: $green;
+      border-color: $green-darken;
+
+      &:hover {
+        background: $green-darken;
+      }
+    }
+
+    &--delete {
+      background: $red;
+      border-color: $red-darken;
+
+      &:hover {
+        background: $red-darken;
+      }
+    }
+  }
+}
+
+@keyframes todoDebut {
+  from {
+    transform: translateY(-20%) scaleX(0);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes todoDelete {
+  from {
+  }
+  to {
+    transform: translate(10%, 20%) rotate(15deg) scale(0.8);
+    opacity: 0;
+  }
+}

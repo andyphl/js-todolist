@@ -1,0 +1,10 @@
+@import "../utils/mixin";
+
+.search {
+  @include flex(center, center);
+  margin-left: 1rem;
+
+  &__label {
+    padding: 0.25rem;
+  }
+}

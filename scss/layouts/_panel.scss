@@ -1,0 +1,9 @@
+@import "../base/color";
+@import "../utils/mixin";
+
+.panel {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: $primary-lighten;
+  @include flex(center, center);
+}

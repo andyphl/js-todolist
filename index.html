@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <h1>andyphl 的代辦事項</h1>
+    </header>
+    <main>
+      <form class="form js-todo-form">
+        <input
+          class="input form__input"
+          type="number"
+          id="year"
+          name="year"
+          required
+        />
+        <label class="form__label" for="year">年</label>
+        <input
+          class="input form__input"
+          type="number"
+          id="month"
+          name="month"
+          min="1"
+          max="12"
+          required
+        />
+        <label class="form__label" for="month">月</label>
+        <input
+          class="input form__input"
+          type="number"
+          id="day"
+          name="day"
+          min="1"
+          max="31"
+          required
+        />
+        <label class="form__label" for="day">日</label>
+        <div>
+          <label class="form__label" for="todo">代辦事項</label>
+          <input class="input form__input" type="text" id="todo" name="todo" />
+          <button class="button form__button" type="submit">建立</button>
+        </div>
+      </form>
+
+      <div class="panel">
+        <button class="button panel__button js-sort-by-time">按時間排序</button>
+        <button class="button panel__button js-sort-by-name">按名稱排序</button>
+        <div class="search">
+          <label class="search__label" for="search">尋找代辦事項</label>
+          <input
+            class="input search__input js-search"
+            type="search"
+            name="search"
+            id="search"
+          />
+        </div>
+      </div>
+
+      <section class="todo-section">
+        <ul class="todolist"></ul>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>

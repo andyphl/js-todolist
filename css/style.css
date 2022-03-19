@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+.header {
+  background: #52a9be;
+  text-align: center;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+}
+
+.todolist {
+  margin-top: 2rem;
+}
+
+.panel {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #82cbdd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0.25rem 0;
+}
+
+.form__input[type="number"] {
+  width: 5rem;
+}
+
+.form__input[type="number"]::-webkit-outer-spin-button, .form__input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.form__label {
+  padding: 0.25rem;
+}
+
+.button {
+  margin-left: 1rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 2px #2c778a solid;
+  background: #82cbdd;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #52a9be;
+}
+
+.input {
+  padding: 0.5rem 0.75rem;
+  margin: 0.25rem 0;
+  border-radius: 0.5rem;
+  border: 2px #2c778a solid;
+}
+
+.search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 1rem;
+}
+
+.search__label {
+  padding: 0.25rem;
+}
+
+.todo {
+  width: 90vw;
+  margin: 0 auto 1rem;
+  border-radius: 0.5rem;
+  border: 2px #2c778a solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: #82cbdd;
+  padding: 1rem 2rem;
+  -webkit-animation: todoDebut 0.5s ease-in-out;
+          animation: todoDebut 0.5s ease-in-out;
+}
+
+.todo--complete {
+  opacity: 0.5;
+}
+
+.todo--complete .todo__title {
+  text-decoration: line-through;
+}
+
+.todo--delete {
+  -webkit-animation: todoDelete 0.3s ease-in-out;
+          animation: todoDelete 0.3s ease-in-out;
+}
+
+.todo__title {
+  font-weight: normal;
+  font-size: 1.25rem;
+  line-height: 2;
+}
+
+.todo__time {
+  font-weight: 200;
+  font-size: 0.75rem;
+}
+
+.todo__button--complete {
+  background: #49c549;
+  border-color: #208120;
+}
+
+.todo__button--complete:hover {
+  background: #208120;
+}
+
+.todo__button--delete {
+  background: #da0000;
+  border-color: #9b0000;
+}
+
+.todo__button--delete:hover {
+  background: #9b0000;
+}
+
+@-webkit-keyframes todoDebut {
+  from {
+    -webkit-transform: translateY(-20%) scaleX(0);
+            transform: translateY(-20%) scaleX(0);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0) scaleX(1);
+            transform: translateY(0) scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes todoDebut {
+  from {
+    -webkit-transform: translateY(-20%) scaleX(0);
+            transform: translateY(-20%) scaleX(0);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0) scaleX(1);
+            transform: translateY(0) scaleX(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes todoDelete {
+  from {
+  }
+  to {
+    -webkit-transform: translate(10%, 20%) rotate(15deg) scale(0.8);
+            transform: translate(10%, 20%) rotate(15deg) scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes todoDelete {
+  from {
+  }
+  to {
+    -webkit-transform: translate(10%, 20%) rotate(15deg) scale(0.8);
+            transform: translate(10%, 20%) rotate(15deg) scale(0.8);
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */

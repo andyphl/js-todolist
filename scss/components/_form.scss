@@ -1,0 +1,22 @@
+@import "../utils/_mixin.scss";
+@import "../base/color";
+
+.form {
+  @include flex(center, center);
+  flex-wrap: wrap;
+  padding: 0.25rem 0;
+
+  &__input {
+    &[type="number"] {
+      width: 5rem;
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+    }
+  }
+
+  &__label {
+    padding: 0.25rem;
+  }
+}
