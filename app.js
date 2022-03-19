@@ -3,8 +3,8 @@ const todoList = document.querySelector(".todolist");
 const now = new Date();
 const formInput = todoForm.querySelectorAll(`.form__input`);
 formInput[0].value = now.getFullYear();
-formInput[1].value = now.getMonth();
-formInput[2].value = now.getDay();
+formInput[1].value = now.getMonth() + 1;
+formInput[2].value = now.getDate();
 const todoInput = formInput[3];
 const search = document.querySelector(".js-search");
 
