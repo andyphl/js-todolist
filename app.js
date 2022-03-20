@@ -7,6 +7,8 @@ formInput[1].value = now.getMonth() + 1;
 formInput[2].value = now.getDate();
 const todoInput = formInput[3];
 const search = document.querySelector(".js-search");
+const sortByTimeBtn = document.querySelector(".js-sort-by-time");
+const sortByNameBtn = document.querySelector(".js-sort-by-name");
 
 // Load data from localstorage
 const todoListData = JSON.parse(localStorage.getItem("todoListData")) || [];
@@ -132,13 +134,28 @@ function findMatches(input) {
     );
   });
 }
-
 search.addEventListener("input", handleTodoSearch);
 
+// Sort by time
 function sortByTime() {
-  // TODO: Sort todo list by time
+  todoListData.sort((a, b) => {
+    const aDate = new Date(a.year, a.month - 1, a.day).getTime();
+    const bDate = new Date(b.year, b.month - 1, b.day).getTime();
+    return aDate - bDate;
+  });
+  todoList.innerHTML = "";
+  todoListData.forEach((todoData) => createTodoItem(todoData));
 }
+sortByTimeBtn.addEventListener("click", sortByTime);
 
+// Sort by todo name
 function sortByName() {
-  // TODO: Sort todo list by name
+  todoListData.sort((a, b) => {
+    console.log(a.todo, b.todo, a.todo < b.todo);
+    return a.todo.localeCompare(b.todo);
+  });
+  console.log(todoListData);
+  todoList.innerHTML = "";
+  todoListData.forEach((todoData) => createTodoItem(todoData));
 }
+sortByNameBtn.addEventListener("click", sortByName);
